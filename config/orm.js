@@ -1,11 +1,20 @@
-const connectionJS = require("connection");
+const connection = require("./connection.js");
 
-class ORM extends connectionJS {
+// Object for all our SQL statement functions.
+const orm = {
+  selectAll(tableInput, burgerCallback) {
+    const queryString = `SELECT * FROM ${tableInput};`;
+    connection.query(queryString, (err, result) => {
+      if (err) {
+        throw err;
+      }
+      burgerCallback(result);
+    });
+  },
 
-selectAll()
-insertOne()
-updateOne()
-
+  // insertOne()
+  // updateOne()
 };
 
-module.exports = ORM;
+// Export the orm object for the model (burger.js)
+module.exports = orm;

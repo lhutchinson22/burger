@@ -1,19 +1,5 @@
-const express = require("express");
-const exphbs = require("express-handlebars");
+// Set up MySQL connection.
 const mysql = require("mysql");
-
-const app = express();
-
-// Set the port of our application
-// process.env.PORT lets the port be set by Heroku
-const PORT = process.env.PORT || 8080;
-
-// Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -23,11 +9,14 @@ const connection = mysql.createConnection({
   database: "burgers_db",
 });
 
+// Make connection.
 connection.connect((err) => {
   if (err) {
     console.error(`error connecting: ${err.stack}`);
     return;
   }
-
   console.log(`connected as id ${connection.threadId}`);
 });
+
+// Export connection for our ORM to use.
+module.exports = connection;
