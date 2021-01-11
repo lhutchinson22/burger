@@ -1,6 +1,12 @@
 body {
   background-color: black;
   color: red;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 40px;
 }
 
 img {
@@ -9,24 +15,28 @@ img {
 
 #header {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 #displayBurger {
   text-align: center;
-  display: inline;
   margin: auto;
+  width: 400px;
+  background-color: rgb(61, 59, 59);
 }
 
 ul {
   margin: 10px;
-  padding: 10px;
-  /* position: absolute;
-  float: left; */
+  padding: 10px 0px 10px 0px;
+  /* background-color: rgb(59, 146, 245); */
+  width: 100px;
+  text-align: center;
 }
 
 #newBurgerForm {
   text-align: center;
+  padding: 10px;
+  margin: auto;
 }
 
 .center {

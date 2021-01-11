@@ -4,11 +4,11 @@
 <div id="header">
     <h1>EAT-A-BURGER!</h1>
     <img src="https://assets.epicurious.com/photos/57c5c6d9cf9e9ad43de2d96e/master/pass/the-ultimate-hamburger.jpg"
-        width="300" alt="ULTIMATE BURGER">
+        width="250" alt="ULTIMATE BURGER">
 </div>
 
 <div id="displayBurger">
-    <ul>
+    <ul id="burgerItem">
         {{#each burgers}}
         {{burger_name}}
         <button class="devouredId" id="burger_id">devour it</button>
@@ -18,7 +18,7 @@
 </div>
 
 {{!-- div for devoured --}}
-<ul id="">
+<ul id="displayDevour">
     {{#each burgers}}
     {{/each}}
 </ul>
