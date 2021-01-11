@@ -5,10 +5,10 @@ const burger = {
   selectAll(burgerCallback) {
     orm.selectAll("burgers", (res) => burgerCallback(res));
   },
-  //   // The variables cols and vals are arrays.
-  //   create(cols, vals, cb) {
-  //     orm.create("burgers", cols, vals, (res) => cb(res));
-  //   },
+  // The variables  vals are arrays.
+  insertOne(vals, burgerCallback) {
+    orm.insertOne("burgers", vals, (res) => burgerCallback(res));
+  },
 
   //   devour(objColVals, condition, cb) {
   //     orm.devour("burgers", objColVals, condition, (res) => cb(res));

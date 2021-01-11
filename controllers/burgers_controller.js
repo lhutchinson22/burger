@@ -17,5 +17,12 @@ router.get("/", (req, res) => {
   });
 });
 
+router.post("/api/burgers", (req, res) => {
+  burger.insertOne([req.body.burger_name], (result) => {
+    // Send back the ID of the new quote
+    res.json({ id: result.insertId });
+  });
+});
+
 // Export routes for server.js to use.
 module.exports = router;

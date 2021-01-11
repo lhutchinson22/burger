@@ -12,7 +12,19 @@ const orm = {
     });
   },
 
-  // insertOne()
+  insertOne(table, vals, burgerCallback) {
+    let queryString = `INSERT INTO ${table} (burger_name) VALUES (?)`;
+
+    console.log(queryString);
+
+    connection.query(queryString, vals, (err, result) => {
+      if (err) {
+        throw err;
+      }
+
+      burgerCallback(result);
+    });
+  },
   // updateOne()
 };
 
