@@ -33,3 +33,42 @@ burgerSubmit.addEventListener("click", (e) => {
     });
   }
 });
+
+// UPDATE
+const devorBurger = document.querySelectorAll(".devouredId");
+
+if (devorBurger) {
+  devorBurger.forEach((element) => {
+    element.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Grabs the id of the element that goes by the name, "id"
+      //   const id = e.target.getAttribute('data-id');
+      const newSleep = e.target.getAttribute("data-newsleep");
+
+      const newSleepState = {
+        sleepy: newSleep,
+      };
+
+      fetch(`/api/cats/${id}`, {
+        method: "PUT",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+
+        // make sure to serialize the JSON body
+        body: JSON.stringify(newSleepState),
+      }).then((response) => {
+        // Check that the response is all good
+        // Reload the page so the user can see the new quote
+        if (response.ok) {
+          console.log(`changed sleep to: ${newSleep}`);
+          location.reload("/");
+        } else {
+          alert("something went wrong!");
+        }
+      });
+    });
+  });
+}

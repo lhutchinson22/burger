@@ -25,7 +25,19 @@ const orm = {
       burgerCallback(result);
     });
   },
-  // updateOne()
+
+  updateOne(table, objColVals, burgerCallback) {
+    let queryString = `UPDATE ${table} SET ? WHERE ?`;
+
+    console.log(queryString);
+    connection.query(queryString, objColVals, (err, result) => {
+      if (err) {
+        throw err;
+      }
+
+      burgerCallback(result);
+    });
+  },
 };
 
 // Export the orm object for the model (burger.js)
