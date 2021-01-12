@@ -42,16 +42,20 @@ if (devorBurger) {
   devorBurger.forEach((element) => {
     element.addEventListener("click", (e) => {
       e.preventDefault();
+      console.log("clicked");
 
       // Grabs the id of the element that goes by the name, "id"
       //   const id = e.target.getAttribute('data-id');
       const newSleep = e.target.getAttribute("data-newsleep");
 
-      const newSleepState = {
-        sleepy: newSleep,
-      };
+      //const burgerState = {
+      // devoured: true,
+      //};
 
-      fetch(`/api/cats/${id}`, {
+      const burger_id = element.getAttribute("id");
+      console.log(burger_id);
+
+      fetch(`/api/burgers/${burger_id}`, {
         method: "PUT",
         headers: {
           Accept: "application/json",
@@ -59,7 +63,7 @@ if (devorBurger) {
         },
 
         // make sure to serialize the JSON body
-        body: JSON.stringify(newSleepState),
+        //body: JSON.stringify(burgerState),
       }).then((response) => {
         // Check that the response is all good
         // Reload the page so the user can see the new quote

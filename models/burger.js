@@ -12,7 +12,9 @@ const burger = {
   },
   // changing burger to devoured
   updateOne(objColVals, condition, burgerCallback) {
-    orm.devour("burgers", objColVals, condition, (res) => burgerCallback(res));
+    orm.updateOne("burgers", objColVals, condition, (res) =>
+      burgerCallback(res)
+    );
   },
 };
 

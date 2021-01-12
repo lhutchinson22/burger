@@ -18,16 +18,20 @@ img {
   margin-top: 50px;
 }
 
-#displayBurger {
+.display {
   text-align: center;
-  margin: auto;
-  width: 400px;
-  background-color: rgb(61, 59, 59);
+  float: left;
+  /* background-color: rgb(61, 59, 59); */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  /* padding-left: 100px; */
 }
 
 ul {
   margin: 10px;
-  padding: 10px 0px 10px 0px;
+  padding-left: 200px;
   /* background-color: rgb(59, 146, 245); */
   width: 100px;
   text-align: center;
@@ -44,4 +48,10 @@ ul {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+#formRow .center {
+  margin-top: 250px;
+  width: 300px;
+  text-align: center;
 }
