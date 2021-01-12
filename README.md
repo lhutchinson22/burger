@@ -5,9 +5,9 @@
 
 <p>To start the server, simply open the terminal and run: "nodemon server.js" if you have nodemon installed. Otherwise, use "node server.js"</p>
 
-<h2>Images</h2>
-<img src="">
-<img src="">
+<h2>GIF/Images</h2>
+<img src="public/assets/img/burgerGif.gif">
+<img src="public/assets/img/starter.png">
 <img src="">
 
 <h2>Questions</h2>
