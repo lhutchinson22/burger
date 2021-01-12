@@ -13,8 +13,12 @@
             <h3 style="text-align: center;">BURGERS ORDERED :</h3>
             <ul id="burgerItem">
                 {{#each burgers}}
-                {{burger_name}}
-                <button class="devouredId" id={{this.id}}>devour it</button>
+                {{#unless devoured}}
+                {{> burgers/burger-block devoured=false}}
+                <button class="devouredId" id="{{this.id}}" data-newdevoured="{{devoured}}">devour it
+
+                </button>
+                {{/unless}}
                 {{/each}}
 
             </ul>
@@ -22,12 +26,16 @@
     </div>
 
     {{!-- div for devoured --}}
-    <div class="col-md-6">
+    <div class=" col-md-6">
         <div class="display" id="displayDevour">
             <h3 style="text-align: center;">BURGERS DEVOURED :</h3>
 
             <ul id="devourItem">
                 {{#each burgers}}
+                {{burger_name}}
+                {{#if devoured}}
+                {{> burgers/burger-block devoured=true}}
+                {{/if}}
                 {{/each}}
             </ul>
         </div>
