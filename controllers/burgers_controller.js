@@ -17,6 +17,7 @@ router.get("/", (req, res) => {
   });
 });
 
+//route to insert burget into the table
 router.post("/api/burgers", (req, res) => {
   burger.insertOne([req.body.burger_name], (result) => {
     // Send back the ID of the new quote
@@ -24,12 +25,13 @@ router.post("/api/burgers", (req, res) => {
   });
 });
 
+//route to update the database
 router.put("/api/burgers/:id", (req, res) => {
   const condition = `id = ${req.params.id}`;
 
   console.log("condition", condition);
 
-  burger.devour(
+  burger.updateOne(
     {
       devoured: req.body.devoured,
     },

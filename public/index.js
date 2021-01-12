@@ -1,5 +1,6 @@
 console.log("sanity check");
 
+// Add a new burger
 const burgerInput = document.querySelector("#burger_Input");
 const burgerSubmit = document.querySelector("#submitButton");
 

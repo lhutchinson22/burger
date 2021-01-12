@@ -2,15 +2,16 @@
 const orm = require("../config/orm.js");
 
 const burger = {
+  //selecting all burgers
   selectAll(burgerCallback) {
     orm.selectAll("burgers", (res) => burgerCallback(res));
   },
-  // The variables vals are arrays.
+  //inserting new burger
   insertOne(vals, burgerCallback) {
     orm.insertOne("burgers", vals, (res) => burgerCallback(res));
   },
-
-  devour(objColVals, condition, burgerCallback) {
+  // changing burger to devoured
+  updateOne(objColVals, condition, burgerCallback) {
     orm.devour("burgers", objColVals, condition, (res) => burgerCallback(res));
   },
 };
