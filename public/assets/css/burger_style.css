@@ -31,10 +31,10 @@ img {
 
 ul {
   margin: 10px;
-  padding-left: 200px;
+  padding-right: 50px;
   /* background-color: rgb(59, 146, 245); */
-  width: 100px;
-  text-align: center;
+  /* width: 100px; */
+  /* text-align: center; */
 }
 
 #newBurgerForm {
@@ -51,7 +51,7 @@ ul {
 }
 
 #formRow .center {
-  margin-top: 250px;
+  margin-top: 300px;
   width: 300px;
   text-align: center;
 }
